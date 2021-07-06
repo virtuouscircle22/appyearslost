@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Select comparision by country</title>
+    <%- include('../partials/head.html')%>
+  </head>
+  <body>
+    <%- include('../partials/navigation.html')%>
+    <br><br>
+
+<style type="text/css">
+button{border:#017D94 5px inset; background-color: #69E5FC; height: 50px; width: 100px; text-align: center;}
+#centrado{ text-align: center;}
+</style>
+
+<form id="centrado" action="/grafica03_anos_post" method="POST">
+<br><br><br><br>
+<b>Select the countries that you want to compare in a graphic</b>
+<br><br>
+<% valor=0 %>
+<% for (var i = 0; i < anos_perdidos.length; i++ ) { %>
+  <% valor++ %>
+  <% if ( valor % 5 ==0) { %> <br> <% } %>
+<input type="checkbox" name="paises" value="<%= anos_perdidos[i].Country%>" ><%= anos_perdidos[i].Country    %>
+  <% } %>
+<br><br><button type="submit" class="button">Send</button>
+</form>
+<br><br><br><br><br><br>
+<footer class="mt-auto text-white-50">
+  <tr>
+    <td colspan="2">
+      <br>
+      <center>
+          <img id="imagen" src="images/pie.png" alt="">
+      </center>
+    </td>
+  </tr>
+</footer>
+</body>
+</html>

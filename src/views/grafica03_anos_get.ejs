@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Choose countries to compare (YLL)</title>
+    <%- include('../partials/head.html')%>
+  </head>
+  <style type="text/css">
+  button{border:#017D94 5px inset; background-color: #69E5FC; height: 75px; width: 125px;}
+  tr{border:#017D94 5px inset; height: 50px; text-align: center;}
+  td{border:#017D94 5px inset; height: 50px; text-align: center;}
+  table{ width: 100%; border-style: solid; align:center;}
+  #centrado{ text-align: center;}
+    form{ text-align: center;}
+  </style>
+  <body>
+    <%- include('../partials/navigation.html')%>
+    <br>
+
+    <div >
+        <br><br>
+        <div id="contenedor" >
+            <h2 id="centrado">Total years of life lost by 100000 inhabitants</h2>
+            <h5 id="centrado">Choose at least two countries and push "Send"</h5>
+            <br><br>
+            <div >
+                <form action="/grafica03_anos_post" method="POST">
+                    <div >
+
+                        <table>
+                            <tr>
+                        <% let j = 0;
+                        for (var i = 0; i < anos_perdidos.length; i++ ) {
+                            if (j > 5) {
+                                j = 1
+                        %> </tr><tr>
+                        <%
+                            }else{
+                                j+=1
+                            }
+                        %>
+                            <td> <input type="checkbox" name="paises"
+                                value="<%= anos_perdidos[i].Country %>" >
+                                <label for="paises"> <%= anos_perdidos[i].Country %></label>
+                            </td>
+                        <% } %>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+                    <button style="align:center;"type="submit" >
+                        <h3>Send</h3>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <footer class="mt-auto text-white-50">
+      <tr>
+        <td colspan="2">
+          <br>
+          <center>
+              <img id="imagen" src="images/pie.png" alt="">
+          </center>
+        </td>
+      </tr>
+    </footer>
+</body>
+</html>

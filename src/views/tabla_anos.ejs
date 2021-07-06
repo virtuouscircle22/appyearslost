@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Table of years of life lost </title>
+
+<%- include('../partials/head.html')%>
+<style>
+th{border:#017D94 5px inset;background-color: #10AECC; height: 75px; text-align: center;}
+td{border:#017D94 5px inset; background-color: #69E5FC; height: 50px; text-align: center;}
+#tabla{border-style: solid;}
+h2,h3{text-align: center;}
+</style>
+  </head>
+  <body class="bg-light">
+
+  <%- include('../partials/navigation.html')%>
+    <br><br><br><br>
+    <h2>Table that represent the years of life lost by the different contaminants</h2>
+    <h3>Datum by 2018</h3>
+    <table id="tabla" style="width: 100%">
+
+  <tr>
+      <th>Country</th>
+      <th><a target="_blank"><span data-placement="right" data-toggle="tooltip"  title="Years of Life Lost by PM2.5">* YLL by PM<sub>2.5</sub></span></a></th>
+      <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Years of Life Lost for 100k inhabitants by PM2.5">* YLL Hab by PM<sub>2.5</sub></span></a></th>
+      <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Years of Life Lost by NO2">* YLL by NO<sub>2</sub></span></a></th>
+      <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Years of Life Lost for 100k inhabitants by NO2">* YLL Hab by NO<sub>2</sub></span></a></th>
+      <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Years of Life Lost by O3">* YLL by O<sub>3</sub></span></a></th>
+      <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Years of Life Lost for 100k inhabitants by O3">* YLL Hab by O<sub>3</sub></span></a></th>
+      <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Total of years of life lost by contaminants">* Total YLL</span></a></th>
+  </tr>
+  <% for (var i = 0; i < anos_perdidos.length; i++ ) { %>
+  <tr>
+      <td><%= anos_perdidos[i].Country %></td>
+      <td><%= anos_perdidos[i].YLL_PM25 %></td>
+      <td><%= anos_perdidos[i].YLL_Hab_PM25 %></td>
+      <td><%= anos_perdidos[i].YLL_NO2 %></td>
+      <td><%= anos_perdidos[i].YLL_Hab_NO2 %></td>
+      <td><%= anos_perdidos[i].YLL_O3 %></td>
+      <td><%= anos_perdidos[i].YLL_Hab_O3 %></td>
+      <td><%= total= anos_perdidos[i].YLL_PM25+anos_perdidos[i].YLL_NO2+anos_perdidos[i].YLL_O3 %></td>
+  </tr>
+  <% } %>
+  </table>
+  <footer class="mt-auto text-white-50">
+    <tr>
+      <td colspan="2">
+        <br>
+        <center>
+	          <img id="imagen" src="images/pie.png" alt="">
+        </center>
+      </td>
+    </tr>
+  </footer>
+
+  </body>
+</html>

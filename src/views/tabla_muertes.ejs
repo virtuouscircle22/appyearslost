@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Table of premature deaths</title>
+
+    <%- include('../partials/head.html')%>
+<style>
+th{border:#017D94 5px inset;background-color: #10AECC; height: 75px; text-align: center;}
+td{border:#017D94 5px inset; background-color: #69E5FC; height: 50px; text-align: center;}
+#tabla{border-style: solid;}
+h2,h3{text-align: center;}
+</style>
+</head>
+<body class="bg-light">
+  <%- include('../partials/navigation.html')%>
+  <br><br><br><br>
+  <h2>Table that represent the premature deaths by the different contaminants</h2>
+  <h3>Datum by 2018</h3>
+  <table id="tabla" style="width: 100%">
+
+<tr>
+    <th>Country</th>
+    <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Inhabitants in millions">* Population in mill</span></a></th>
+    <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Medium anual value by PM2.5 in μg/m3 (The OMS sets the limits for PM2.5 at 10 μg / m 3 as an annual average)">* Anual mean PM<sub>2.5</sub></span></a></th>
+    <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Total premature deaths by contaminant PM2.5">* Premature deaths PM<sub>2.5</sub></span></a></th>
+    <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Medium anual value by NO2 in μg/m3 (The OMS sets the limits for NO2 at 40 μg / m 3 as an annual average)">* Anual mean NO<sub>2</sub></span></a></th>
+    <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Total premature deaths by contaminant NO2">* Premature deaths NO<sub>2</sub></span></a></th>
+    <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Medium anual value by O3 in SOMO35 ((“Sum Of Means Over 35”)exposure parameter, which is the sum of excesses of the means
+maximum eight hours above the upper limit of 70 μg / m3, calculated for all days within one year. Values ​​in Europe are considered acceptable up to 6000.In other words, every time the 8-hour mean goes above 105 μg / m3, it is added to the sum.)">* Anual mean O<sub>3</sub></span></a></th>
+    <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Total premature deaths by contaminant O3">* Premature deaths O<sub>3</sub></span></a></th>
+    <th><a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Total premature deaths by all the contaminants">* Total deaths</span></a></th>
+
+</tr>
+<% for (var i = 0; i < muertes_prematuras.length; i++ ) { %>
+<tr>
+    <td><%= muertes_prematuras[i].Country %></td>
+    <td><%= muertes_prematuras[i].Population_mill %></td>
+    <td><%= muertes_prematuras[i].Anual_mean_PM25 %></td>
+    <td><%= muertes_prematuras[i].Pre_deaths_PM25 %></td>
+    <td><%= muertes_prematuras[i].Anual_mean_NO2 %></td>
+    <td><%= muertes_prematuras[i].Pre_deaths_NO2 %></td>
+    <td><%= muertes_prematuras[i].Anual_mean_O3 %></td>
+    <td><%= muertes_prematuras[i].Pre_deaths_O3 %></td>
+    <td><%= muertes_prematuras[i].Total_deaths %></td>
+</tr>
+<% } %>
+</table>
+<footer class="mt-auto text-white-50">
+  <tr>
+    <td colspan="2">
+      <br>
+      <center>
+          <img id="imagen" src="images/pie.png" alt="">
+      </center>
+    </td>
+  </tr>
+</footer>
+
+</body>
+</html>

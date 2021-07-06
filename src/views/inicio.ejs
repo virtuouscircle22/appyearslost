@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CONTAMINANTS</title>
+    <%- include('../partials/head.html')%>
+  </head>
+  <style type="text/css">
+    th {
+      width: 50%;
+      height: 40px
+    }
+    table {
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        border:#00D7FF 5px dotted;
+        border-collapse: collapse;
+        border-radius: 1em ;
+        overflow: hidden;
+    }
+    td {
+        height: 40px;
+        padding-left: 1%;
+        padding: 0.25%;
+        width: 50%;
+    }
+    #con {
+      color:#000000; 
+      background-color: #10AECC}
+    #pm {
+      background-color: #69E5FC
+      }
+    #o{
+      background-color: #69E5FC;
+      }
+    #no{
+      background-color: #69E5FC;
+    }
+    body {
+      text-align:center;
+    }
+    a {
+      color: rgb(0,100, 240);
+    }
+    img{border-radius: 5px; border-color: black; border:solid; align-items: center;}
+  </style>
+  <body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Air</a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Tables</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                <li><a class="dropdown-item" href="/tabla_anos">Years of life lost</a></li>
+                <li><a class="dropdown-item" href="/tabla_muertes">Premature deaths</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Maps</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                <li><a class="dropdown-item" href="/mapa_anos">Years of life lost</a></li>
+                <li><a class="dropdown-item" href="/mapa_muertes">Premature deaths</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Graphics of years lost</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                <li><a class="dropdown-item" href="/grafica01_anos">By pollutant</a></li>
+                <li><a class="dropdown-item" href="/grafica02_anos">Total</a></li>
+                <li><a class="dropdown-item" href="/grafica03_anos_get">Comparision</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Graphics of premature deaths</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                <li><a class="dropdown-item" href="/grafica01_muertes">By pollutant</a></li>
+                <li><a class="dropdown-item" href="/grafica02_muertes">Total</a></li>
+                <li><a class="dropdown-item" href="/grafica03_muertes_get">Comparision</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+<br><br><br><br>
+    <img src="images/banner.jpg" alt="">
+    <tr>
+      <h2>Creator:</h2>
+      <th colspan="2" style="text-align: center;"><b> Proyect made by Jaime Jesús Barrionuevo Mairén </b></a><br>
+          <b>(2ºASIR-A. </b> <a href="https://www.iespuntadelverde.es/" target="_blank"> <b>IES Punta del Verde </b></a><b>. School year 2020/2021)</b><br><br>
+      </th>
+    </tr>
+<main class="px-3">
+
+
+  <p> <b>The datum are extracted from the report of 2020 by the european agency of the enviroment </b><a href="https://www.eea.europa.eu/publications/air-quality-in-europe-2020-report" target="_blank"><b>Air quality in Europe — 2020 report</b></a> </p>
+  <table align="center" border="1" style="width:auto; height:20px;" class="table table-condensed table-bordered table-hover">
+    <tr>
+      <TH id="con"> CONTAMINANTS</TH>
+    </tr>
+    <tr>
+      <th id="pm">
+          <a target="_blank"> <span  data-placement="right" data-toggle="tooltip" title="PM2.5, also known as fine particulate matter, refers to particles or liquid droplets in the air
+that have a diameter less than 2.5 micrometres across (that’s one 400th of a millimetre,
+about 3 per cent of the diameter of a human hair). Some PM2.5 is naturally occurring, such
+as dust and sea salt, and some is manmade, such as particulates from vehicle exhausts.
+">*PM<sub>2.5</sub></span></a>
+    <tr>
+      <th id="o">
+          <a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Ozone, or trioxygen, is an inorganic molecule with the chemical formula O3. It is a pale blue gas with a distinctively pungent smell. It is an allotrope of oxygen that is much less stable than the diatomic allotrope O2, breaking down in the lower atmosphere to O2">*O<sub>3</sub></span></a></th>
+
+    <tr>
+      <th id="no">
+          <a target="_blank"><span data-placement="right" data-toggle="tooltip" title="Nitrogen dioxide is a chemical compound with the formula NO 2 .It is one of several nitrogen oxides. NO 2 is an intermediate in the industrial synthesis of nitric acid, millions of tons of which are produced each year for use primarily in the production of fertilizers. At higher temperatures it is a reddish-brown gas.">
+              *NO<sub>3</sub>
+                  </span></a>
+              </th>
+
+        </table>
+
+</main>
+
+<footer class="mt-auto text-white-50">
+  <tr>
+    <td colspan="2">
+      <br>
+      <img src="images/pie.png" alt="">
+    </td>
+  </tr>
+</footer>
+</body>
+</html>
